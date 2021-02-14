@@ -8,7 +8,7 @@ class application(models.Model):
         ('Internship', 'intern'),
         ('Freelancer', 'freelancer'),
     )   
-    position = models.CharField(max_length=200,null=True)
+    position = models.CharField(max_length=200,null=True )
     description = models.CharField(max_length=200,null=True)
     job_type = models.CharField(max_length=200,null=True, choices= category)
     salary = models.IntegerField(null=True)
@@ -27,6 +27,7 @@ class candidate(models.Model):
     dob = models.DateField(null=True)
     gender = models.CharField(max_length=200,null=True,choices=category)
     mobile = models.IntegerField(null=True)
+    email = models.EmailField(null=True)
     resume = models.FileField(null=True)
 
     def __str__(self):
