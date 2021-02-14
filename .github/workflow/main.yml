@@ -17,9 +17,9 @@ jobs:
     - name: Build containers and run tests
       run: docker build . && docker-compose up -d
 
-deploy:
-  on:
-    push:
-      branch:
-        - master
-      run: docker login --username={$USERNAME}_ --password=$(heroku auth:token) registry.heroku.com
+  deploy:
+    on:
+      push:
+        branch:
+          - master
+        run: docker login --username={$USERNAME}_ --password=$(heroku auth:token) registry.heroku.com
