@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
-from .models import application,candidate
+from .models import application,candidate,admin
 from .serializers import applicationSerializer, candidateSerializer
-# Create your views here.
+
+
 
 
 class applicationView(ModelViewSet):
@@ -12,3 +13,4 @@ class applicationView(ModelViewSet):
 class candidateView(ModelViewSet):
     queryset = candidate.objects.all()
     serializer_class = candidateSerializer
+
