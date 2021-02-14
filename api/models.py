@@ -28,7 +28,7 @@ class candidate(models.Model):
     name = models.CharField(max_length=200,null=True)
     dob = models.DateField(null=True)
     gender = models.CharField(max_length=200,null=True,choices=category)
-    mobile = PhoneNumberField()
+    mobile = PhoneNumberField(region="IN")
     email = models.EmailField(null=True)
     resume = models.FileField(null=True)
 
