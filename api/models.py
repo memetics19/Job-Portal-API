@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
+from phonenumber_field.modelfields import PhoneNumberField
+
 
 class application(models.Model): 
     category = (
@@ -26,11 +28,10 @@ class candidate(models.Model):
     name = models.CharField(max_length=200,null=True)
     dob = models.DateField(null=True)
     gender = models.CharField(max_length=200,null=True,choices=category)
-    mobile = models.IntegerField(null=True)
+    mobile = PhoneNumberField()
     email = models.EmailField(null=True)
     resume = models.FileField(null=True)
 
     def __str__(self):
         return self.name
 
-# Create your models here.
