@@ -18,6 +18,8 @@ jobs:
       run: docker build . && docker-compose up -d
 
   deploy:
+    name: Run deploy
+    runs-on: ubuntu-latest
     on:
       push:
         branch:
