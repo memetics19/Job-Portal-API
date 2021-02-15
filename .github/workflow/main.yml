@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build containers and run tests
-      run: docker build . && docker-compose up -d
+      run:  docker-compose up -d
 
   deploy:
     name: Run deploy
@@ -24,4 +24,4 @@ jobs:
       push:
         branch:
           - master
-        run: docker login --username={$USERNAME}_ --password=$(heroku auth:token) registry.heroku.com
+        run: docker login --username={$USERNAME}_ --password={$PASSWORD} registry.heroku.com  & heroku container:push web & heroku container:release web
