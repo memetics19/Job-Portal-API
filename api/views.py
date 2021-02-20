@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
-from .models import application,candidate,admin
+from .models import application,candidate
 from .serializers import applicationSerializer, candidateSerializer
 
 
