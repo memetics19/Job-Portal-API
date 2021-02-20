@@ -9,4 +9,3 @@ class applicationTest(TestCase):
     def testapplicationcreated(self):
         response = client.get("/")
         self.assertEqual(response.status_code,status.HTTP_200_OK)
-# Create your tests here.
