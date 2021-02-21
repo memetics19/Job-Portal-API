@@ -1,5 +1,18 @@
 from django.db import models
+# from django.contrib.auth.models import AbstractBaseUser,PermissionMixin
 from django.contrib.auth.models import User 
+
+
+
+# class AdminApplication(AbstractBaseUser,PermissionMixin):
+#     email =  models.EmailField(max_length = 255, null = False, default = "Please enter valid E-Mail Address")
+#     username = models.CharField(max_length=255)
+#     is_active = models.BooleanField(default=True)
+#     is_activated = models.BooleanField(default=True)
+
+#     def __
+    
+
 
 class application(models.Model): 
     category = (
@@ -8,8 +21,8 @@ class application(models.Model):
         ('Internship', 'intern'),
         ('Freelancer', 'freelancer'),
     )   
-    position = models.CharField(max_length=200,null=True)
-    description = models.CharField(max_length=200,null=True)
+    position = models.CharField(max_length=200,null=True) #varchar
+    description = models.CharField(max_length=200,null=True) 
     job_type = models.CharField(max_length=200,null=True, choices= category)
     salary = models.IntegerField(null=True)
     experience = models.IntegerField(null=True)
@@ -28,16 +41,13 @@ class candidate(models.Model):
     gender = models.CharField(max_length=200,null=True,choices=category)
     mobile = models.IntegerField(null=True)
     email = models.EmailField(null=True)
-    job_applied = models.ForeignKey(application, default=0,null=False,on_delete=models.SET_DEFAULT)
+    job_applied = models.ForeignKey(application,default=1,on_delete=models.SET_DEFAULT)
     resume = models.FileField(null=True)
 
 
-
     def __str__(self):
-        return self.name
+        return self.name,self.job_applied
 
-# class adminIP(models.Model):
-#     ip = models.GenericIPAddressField(null=False)
 
-# Create your models here.
-0
+class CandidateIP(models.Model):
+    ip = models.GenericIPAddressField(db_index=True)

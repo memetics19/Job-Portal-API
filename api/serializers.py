@@ -1,6 +1,9 @@
 from rest_framework import serializers
 from .models import application,candidate
 
+
+    
+
 class applicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = application
