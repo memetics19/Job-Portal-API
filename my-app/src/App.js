@@ -22,11 +22,12 @@ class App extends React.Component {
               <a href="#about">About</a>
             </div>
           </div>
-          <div class="centered"><button class="centerbuttons" onClick={this.jobPostForm}>Post a job</button>
-          <br/>
-          <br/>
-          <button class="centerbuttons" onClick={this.lookAtJobs}>Look at jobs</button>
-          </div>
+          <table class="centered">
+            <button class="centerbuttons" onClick={this.jobPostForm}>Post a job</button>
+            <br/>
+            <br/>
+            <button class="centerbuttons" onClick={this.lookAtJobs}>Look at jobs</button>
+          </table>
         </body>
       </React.Fragment>
     );
