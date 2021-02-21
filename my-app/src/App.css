@@ -1,6 +1,9 @@
-/*.App {
-  text-align: center;
-}*/
+.App {
+  background-color: black;
+  background-image: url("pink_sky.jpg");
+  background-attachment: fixed;
+  background-position: center;
+}
 
 /*.App-logo {
   height: 40vmin;
@@ -27,8 +30,8 @@
 }
 
 .centerbuttons {
-  background-color: #ff00ff; /* Green */
-  border: none;
+  background-color: plum;
+  border-style: none;
   border-radius: 4px;
   color: white;
   padding: 15px 32px;
@@ -71,7 +74,7 @@
 }
 
 .App-header a.active {
-  background-color: #ff00ff;
+  background-color: plum;
   color: white;
 }
 

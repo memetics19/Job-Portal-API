@@ -13,19 +13,21 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div class="App-header">
-        <a href="#" class="logo">JobPortal</a>
-          <div class="App-header-right">
-            <a class="active" href="#home">Home</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+        <body class="App">
+          <div class="App-header">
+          <a href="#" class="logo">JobPortal</a>
+            <div class="App-header-right">
+              <a class="active" href="#home">Home</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+            </div>
           </div>
-        </div>
-        <div class="centered"><button class="centerbuttons" onClick={this.jobPostForm}>Post a job</button>
-        <br/>
-        <br/>
-        <button class="centerbuttons" onClick={this.lookAtJobs}>Look at jobs</button>
-        </div>
+          <div class="centered"><button class="centerbuttons" onClick={this.jobPostForm}>Post a job</button>
+          <br/>
+          <br/>
+          <button class="centerbuttons" onClick={this.lookAtJobs}>Look at jobs</button>
+          </div>
+        </body>
       </React.Fragment>
     );
   }
