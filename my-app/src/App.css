@@ -21,25 +21,41 @@
 }*/
 
 .centered {
-  height: 100vh;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 75vh;
+  min-width: 50vh;
   flex-direction: column;
   table-layout: fixed;
+  background-color: plum;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 10%;
+  max-height: 10%;
+  margin-top: 10vh;
+}
+
+.innerHeader {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .centerbuttons {
-  background-color: plum;
+  background-color: white;
   border-style: none;
   border-radius: 4px;
-  color: white;
+  color: black;
   padding: 12px 12px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   display: inline-block;
   font-size: 16px;
-  width: 15%;
+  width: 55%;
 }
 
 .centerbuttons:hover {

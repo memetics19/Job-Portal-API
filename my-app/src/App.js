@@ -1,15 +1,25 @@
 import React from 'react'; 
-import "./App.css"
+import "./App.css";
+import ReactDom from 'react-dom';
 
 class App extends React.Component {
-  jobPostForm() {
-    alert("To be implemented");
+  
+  candidate_login(){
+
   }
 
-  lookAtJobs(){
-    alert("To be implemented");
+  hr_login(){
+
   }
-  
+
+  signUp(){
+
+  }
+
+  browseJobs(){
+
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -20,13 +30,15 @@ class App extends React.Component {
               <a class="active" href="#home">Home</a>
               <a href="#contact">Contact</a>
               <a href="#about">About</a>
+              <a href="#browse">Browse jobs</a>
+              <a href="#HR">HR Log in</a>
             </div>
           </div>
           <table class="centered">
-            <button class="centerbuttons" onClick={this.jobPostForm}>Post a job</button>
+            <h1 class="innerHeader">Welcome!</h1>
+            <button class="centerbuttons" onClick={this.candidate_login}>Candidate log in</button>
             <br/>
-            <br/>
-            <button class="centerbuttons" onClick={this.lookAtJobs}>Look at jobs</button>
+            <button class="centerbuttons" onClick={this.signUp}>Candidate sign up</button>
           </table>
         </body>
       </React.Fragment>
