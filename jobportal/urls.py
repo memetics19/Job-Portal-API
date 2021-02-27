@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers 
 from api import views
+
 routers = routers.DefaultRouter()
 routers.register('application',views.applicationView,basename='application')
 routers.register('candidate',views.candidateView,basename='candidate')
-
+routers.register('candiatelogin',views.CandidateUserProfileView,basename='candidatelogin')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'',include(routers.urls)),
