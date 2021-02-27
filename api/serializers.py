@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import application,candidate
-from accounts.models import UserProfile
+from accounts import models
+from django.contrib.auth import get_user_model
     
 
 class applicationSerializer(serializers.ModelSerializer):
@@ -17,7 +18,7 @@ class candidateSerializer(serializers.ModelSerializer):
 
 class CandidateUserProfileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UserProfile
+        model = get_user_model()
         fields = ('id','email','name','password')
         extra_kwargs  = {
             'password':{
@@ -26,17 +27,19 @@ class CandidateUserProfileSerializer(serializers.ModelSerializer):
             }
         }
 
-        def create(self,validated_data):
-            user = UserProfile.objects.create(
-                email = validated_data['email'],
-                name = validated_data['name'],
-                password = validated_data['password']
-            )
-            return user
-
-        def update(self, instance, validated_data):
-            if 'password' in validated_data:
-                password = validated_data.pop('password')
+    def create(self, validated_data):
+            password = validated_data.pop('password', None)
+            instance = self.Meta.model(**validated_data)
+            if password is not None:
                 instance.set_password(password)
- 
-            return super().update(instance, validated_data)
+            instance.save()
+            return instance
+
+    def update(self, instance, validated_data):
+        for attr, value in validated_data.items():
+            if attr == 'password':
+                instance.set_password(value)
+            else:
+                setattr(instance, attr, value)
+            instance.save()
+            return instance
