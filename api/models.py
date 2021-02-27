@@ -4,14 +4,7 @@ from django.contrib.auth.models import User
 
 
 
-# class AdminApplication(AbstractBaseUser,PermissionMixin):
-#     email =  models.EmailField(max_length = 255, null = False, default = "Please enter valid E-Mail Address")
-#     username = models.CharField(max_length=255)
-#     is_active = models.BooleanField(default=True)
-#     is_activated = models.BooleanField(default=True)
 
-#     def __
-    
 
 
 class application(models.Model): 
@@ -49,5 +42,3 @@ class candidate(models.Model):
         return self.name,self.job_applied
 
 
-class CandidateIP(models.Model):
-    ip = models.GenericIPAddressField(db_index=True)
