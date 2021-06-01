@@ -28,5 +28,5 @@ rq==1.7.0
 sendgrid==6.6.0
 sqlparse==0.4.1
 starkbank-ecdsa==1.1.0
-urllib3==1.26.3
+urllib3==1.26.4
 gunicorn
